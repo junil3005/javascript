@@ -4,8 +4,9 @@
 // console.log("command3");
 
 //  timer 함수
-//  setTimeout(callback, delay)
+//  타이머 생성: setTimeout(callback, delay)
 //  -> 비동기 방식
+//  타이머 해제: clearTimeout(timerId)
 function timerTest() { // 비동기의 간단한 예시
     console.log("2초 후 인사합니다."); // 1번 호출
     setTimeout(() => {
@@ -26,7 +27,7 @@ function intervalTest() {
             console.log("타이머를 종료합니다.");
             clearInterval(intervalId);
         }
-    }, 1000);
+    }, 1000);   //  1초에 한번 1000m/s
     console.log("End of Function"); 
 }
 intervalTest();

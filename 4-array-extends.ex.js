@@ -1,4 +1,4 @@
-//  forEach : 배열 내부 요소들을 하나씩 추출, 콜백 함수 전달
+// forEach 배열 내부 요소들을 하나씩 추출, 콜백 함수 전달
 function testForEach() {
     console.log("=============  testForEach");
     const source = ["Apple", "Banana", "Carrot", "Durian"];
@@ -21,26 +21,25 @@ function testForEach() {
 // testForEach();
 
 function testEverySome() {
-    const data = [
-          { name: "홍길동", age: 28 },
-          { name: "장길산", age: 35 },
-          { name: "전우치", age: 25 }
-    ];  //  객체의 배열
+    const data =[
+        { name: "홍길동", age: 28},
+        { name: "장길산", age: 35},
+        { name: "전우치", age: 25}
+    ]; // 객체의 배열
 
     console.log("원본 데이터:", data);
 
-    //  모든 객체의 age가 25세 초과하는지 검증
-    let result = data.every(obj => obj.age > 25);   //  검증 로직
-    
-    console.log("모든 인물의 나이가 25세 초과?",
-                          result);    
+    let result = data.every(obj => obj.age > 25); 
 
-    //  일부 객체의 age가 25세를 초과하는지 검증
+    console.log("모든 인물의 나이가 25세 초과?",
+                        result);
+
+    // 일부 객체의 age가 25세를 초과하는지 검증
     result = data.some(obj => {
         return obj.age > 25;
     });
-    console.log("일부 인물의 나이가 25초과?", result);
-}  
+    console.log("일부 인물의 나이가 25세초과", result);
+}
 // testEverySome();
 
 // 데이터 처리 파이프라인
@@ -64,49 +63,46 @@ function testMap() {
 // testMap();
 
 function testFilter() {
-    console.log("========= filter");
-    //  filter: 내부 요소만 그대로
+    console.log("============ filter");
+    //  filter : 내부 요소만 그대로
     //  조건 만족하는 요소만 뽑아서 새 배열 생성
-    
-    //  numbers 베열에서 짝수만 필터링
-    let result = numbers.filter(item => item % 2 == 0)
+
+    // numbers 배열에서 짝수만 필터링
+    let result = numbers.filter(item => item % 2 ==0)
     console.log("원본 데이터:", numbers);
     console.log("짝수 데이터:", result);
     console.log("3의 배수:",
-        numbers.filter(item => item % 3 == 0)
+        numbers.filter(item => item % 3 == 0) 
     );
 }
 // testFilter();
 
 function testReduce() {
-    console.log("================= reduce");
+    console.log("===========reduce");
     //  가장 일반적인 Reduct -> 집계
     console.log("원본:", source);
-    //  source 배열의 모든 요소 합산
+    // source 배열의 모든 요소 합산
     let sum = source.reduce((acc, value, index, arr) => {
         console.log(
-            `콜백 파라미터 (acc: ${acc}, value: ${value},
-            index: ${index}, arr: ${arr})`, acc + value
+        `콜백 파라미터 (acc: ${acc}, value" ${value},
+        index: ${index}, arr: ${arr})`, acc + value
         );
-        //  acc -> 현재까지의 집계 값
-        //  value -> 현재 값 
+        // acc -> 현재까지의 집계 값
+        // value -> 현재 값
 
-        return acc + value; //  -> 다음번 콜백의 acc로 전달
+        return acc + value; 
     }, 0);
 
-    // console.log("합산결과:", sum);
+    // console.log ("합산결과:", sum);
 }
 // testReduce();
 
 function testReduce2() {
-    //  반복되는 모든 것에는 reduce 함수를 적용할 수 있음
-    //  map함수를 reduce함수로 구현 
-    //  모든 요소를 * 2 -> 새 배열 생성
     console.log("원본배열:", numbers);
     let result = numbers.reduce((acc, value) => {
         console.log(`콜백 파라미터: (acc: ${acc}, value: ${value})`);
         acc.push(value * 2);
-        console.log( ` -> ${acc}`);
+        console.log(` -> ${acc}`);
 
         return acc;
     }, []);
@@ -131,12 +127,12 @@ function testReduce3() {
 const data = [
     { name: "철수", kor: 85, eng: 92, math: 88 },
     { name: "영희", kor: 70, eng: 74, math: 95 },
-    { name: "지후", kor: 91, eng: 89, mathe:85 },
-    { name: "지수", kor: 65, eng: 70, mathe:72 },
-    { name: "지후", kor: 80, eng: 90, mathe:91 }
-];  
+    { name: "지후", kor: 91, eng: 89, math: 85 },
+    { name: "지수", kor: 65, eng: 70, math: 72 },
+    { name: "지후", kor: 80, eng: 90, math: 91 }
+];
 //  데이터 파이프라인 구축 예제
-    function testDataPopeline() {
+function testDataPopeline() {
     console.log("=========== map, filter, sort, reduce를" + 
         "이용한 데이터 파이프라인");
     console.log("원본데이터:", data);
@@ -169,21 +165,11 @@ const data = [
     const avgTotalSum = totalSum / sortedStudents.length;
     console.log("총점240점이상 학생들의 평균:", avgTotalSum);
 }   
-// testDataPipeline();
+// testDataPopeline();
 
-console.log(
-    "데이터 파이프라인 구축:",
-    data
-        .map(student => ({
-            ...student,
-            total: student.kor + 
-                   student.eng + 
-                   student.math
-        }))
-    .filter(student => student.total >= 240)
-    .sort((a, b) => b.total - a.total)
-    .reduce((acc, student) => 
-        acc + student.total, 0) / 3
-);
+
+
+
+
 
 

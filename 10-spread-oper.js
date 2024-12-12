@@ -39,7 +39,7 @@ let obj2 = { three: 3, four: 4, other: -1};
 
 combined = {
     one: obj1.one,
-    two: obj1.three,
+    two: obj1.two,
     three: obj2.three,
     four: obj2.four,
     other: obj2.other   //  중복 속성
