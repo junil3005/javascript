@@ -541,3 +541,7 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudio
+ex02-js/images/iphone8.jpeg
+ex02-js/images/iphone-xs.jpeg
+ex02-js/images/iphone-xr.jpeg
+ex02-js/images/ipad-mini.jpeg
